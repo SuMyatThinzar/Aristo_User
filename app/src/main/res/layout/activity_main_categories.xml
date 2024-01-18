@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_primary"
+    tools:context=".view.activities.MainCategoriesActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@color/color_primary">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/ib_back"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="@dimen/margin_card_medium_2"
+                android:padding="@dimen/margin_card_medium_2"
+                android:src="@drawable/baseline_arrow_back_accent_24" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:layout_weight="1"
+                android:text="အမျိုးအစားများ"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/ib_cart"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_marginEnd="@dimen/margin_card_medium_2"
+                    android:background="@color/color_primary"
+                    android:src="@drawable/outline_shopping_cart_accent_24" />
+
+                <TextView
+                    android:id="@+id/tv_notification_badge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/margin_medium_2"
+                    android:text="10"
+                    android:textSize="12sp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/background_badge_count"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/margin_card_medium"
+                    android:paddingEnd="@dimen/margin_card_medium"
+                    android:layout_marginStart="@dimen/margin_large"/>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_main_categories"
+            android:layout_width="110dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            tools:listitem="@layout/view_holder_main_category" />
+
+        <View
+            android:layout_width="0.7dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:background="@color/grey"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_sub_categories"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/sub_cat_items"
+            android:layout_marginStart="@dimen/margin_medium_2"/>
+
+    </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/mainLoading"
+            style="?android:attr/progressBarStyle"
+            android:layout_margin="@dimen/margin_large"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    </LinearLayout>

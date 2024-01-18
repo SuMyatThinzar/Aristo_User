@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Circular">
+        
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="LinkTextView">
+        <item name="android:textColor">@color/color_accent</item> <!-- Customize the text color -->
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+</resources>
